@@ -25,6 +25,7 @@ class ViewModel : ViewModelProtocol {
     func updateView() {
         DispatchQueue.main.async {
             self.view!.tasksTable.reloadData()
+
         }
     }
     
@@ -69,6 +70,7 @@ class ViewModel : ViewModelProtocol {
                                 
                             }
                             DispatchQueue.main.async {
+                                
                                 NotificationCenter.default.post(name: NSNotification.Name("datasChanged"), object: nil)
                             }
                             

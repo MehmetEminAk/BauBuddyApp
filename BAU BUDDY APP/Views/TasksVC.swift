@@ -12,6 +12,7 @@ import JGProgressHUD
 class TasksVC: UIViewController {
     var qrCodeText : String?
     var viewModel :  ViewModel!
+    var refreshController : UIRefreshControl?
     
     let progress : JGProgressHUD = {
         let hud = JGProgressHUD(style: .light)
@@ -45,17 +46,13 @@ class TasksVC: UIViewController {
         viewModel.configureTable()
         viewModel.fetchDatas()
         
-        if let _ = qrText {
-            navigationController?.navigationBar.topItem?.searchController?.searchBar.text = qrText
-        }
+        
         
         
         }
     override func viewWillAppear(_ animated: Bool) {
-        if qrCodeText != nil {
-        
-            self.navigationController?.navigationBar.topItem?.searchController?.searchBar.text = self.qrCodeText
-    
+        if let _ = qrText {
+            navigationController?.navigationBar.topItem?.searchController?.searchBar.text = qrText
         }
     }
 }

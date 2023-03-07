@@ -32,6 +32,21 @@ extension ViewModel {
         view!.tasksTable.delegate = view
         view!.tasksTable.dataSource = view
         view!.tasksTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        view!.refreshController = UIRefreshControl()
+        view!.refreshController!.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        view?.tasksTable.refreshControl = view?.refreshController
+        
+    }
+}
+
+
+extension ViewModel {
+    @objc func refreshData(){
+        DispatchQueue.main.async {
+            self.fetchDatas()
+            self.view!.refreshController!.endRefreshing()
+        }
+        
     }
 }
 
