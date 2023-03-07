@@ -14,3 +14,4 @@ internal let authenticationType : String = "Basic"
 internal let basicAuthenticationCode : String =  "QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz"
 internal let deviceWidth : CGFloat = UIScreen.main.bounds.width
 internal let deviceHeight : CGFloat = UIScreen.main.bounds.height
+var qrText : String?

@@ -13,5 +13,4 @@ protocol DbDeclare {
     
 }
 
-protocol RealmType : Object , DbDeclare {}
 

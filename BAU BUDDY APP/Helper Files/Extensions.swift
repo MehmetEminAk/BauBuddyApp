@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 extension UIViewController {
     
@@ -43,8 +44,6 @@ extension UIViewController {
     }
     
 }
-
-
 extension UIColor {
     
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
@@ -56,3 +55,5 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }
+
+
